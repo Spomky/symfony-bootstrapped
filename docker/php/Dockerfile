@@ -11,10 +11,12 @@ RUN apk add --no-cache \
         icu-libs \
         git \
         unzip \
-        libzip-dev \
-        zlib-dev && \
+        libzip \
+        zlib && \
     apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
+        libzip-dev \
+        zlib-dev \
         icu-dev && \
     docker-php-ext-install \
         intl \
